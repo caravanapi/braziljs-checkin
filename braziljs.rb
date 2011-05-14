@@ -8,7 +8,7 @@ configure do
   require 'database'
 end
 
-get '/(index)' do
+get '/' do
   erb :index
 end
 
