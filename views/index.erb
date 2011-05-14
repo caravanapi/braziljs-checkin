@@ -7,29 +7,27 @@
     <section id="current-keynote">
       <a href="#">
         <figure>
-          <img src="img/photos/gc.jpg" width="86" height="76" alt="Gc">
+          <img src="img/photos/<%= @current.author.parameterize %>.jpg" alt="<%= @current.title %>">
         </figure>
         <span>Agora!</span>
-        <h2>Guilherme Chapiewski</h2>
-				<span class="arrow">Ver</a>
+        <h2><%= @current.author %></h2>
       </a>
     </section>
     <ul class="speakers-list">
-      <li><a href="#"><img src="img/photos/david-herman.jpg" width="86" height="76" alt="David Herman"></a></li>
-      <li><a href="#"><img src="img/photos/marcelo-campos.png" width="86" height="76" alt="Marcelo Campos"></a></li>
-      <li><a href="#"><img src="img/photos/izabel.JPG" width="86" height="76" alt="Izabel"></a></li>
-      <li><a href="#"><img src="img/photos/gc.jpg" width="86" height="76" alt="Gc"></a></li>
-      <li><a href="#"><img src="img/photos/loiane.jpg" width="86" height="76" alt="Loiane"></a></li>
-      <li><a href="#"><img src="img/photos/porkaria.png" width="86" height="76" alt="Bruno Porkaria"></li>
-      <li><a href="#"><img src="img/photos/fnando.jpg" width="86" height="76" alt="Fernando"></li>
-      <li><a href="#"><img src="img/photos/davidsonfellipe.jpg" width="86" height="76" alt="Davidson"></li>
-      <li><a href="#"><img src="img/photos/pedro_barcelona.jpg" width="86" height="76" alt="Pedro"></li>
-      <li><a href="#"><img src="img/photos/mikeyyyy.png" width="86" height="76" alt="Mikey"></li>
+      <% @keynotes.each do |keynote| %>
+        <li>
+          <a href="/keynotes/<%= keynote.id %>">
+            <img src="img/photos/<%= keynote.author.parameterize %>.jpg" alt="<%= keynote.title %>">
+          </a>
+        </li>
+      <% end %>
     </ul>
   </div>
 
   <footer>
-    <a class="friday">Sexta</a>
-    <a class="saturday">Sábado</a>
+		<nav>
+			<li><a class="friday current">Sexta</a></li>
+			<li><a class="saturday">Sábado</a></li>
+		</nav>
   </footer>
 </div> <!-- end of #container -->
