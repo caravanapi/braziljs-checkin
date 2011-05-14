@@ -355,10 +355,10 @@ h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; d
   height: 48px;
   margin-bottom:4px;
 }
-#rate-it li .ïcon-up {
+#rate-it li .icon-up {
   background-position: 0 -180px;
 }
-#rate-it li .ïcon-down {
+#rate-it li .icon-down {
   background-position: -54px -180px;
 }
 #rate-it li+li {
