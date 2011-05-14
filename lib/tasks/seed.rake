@@ -29,7 +29,7 @@ namespace :db do
       { :title => 'Lightning Talks: Descobrindo o CouchDB', :author => 'Henrique Gogó', :start_at => DateTime.new(2011,05,14,13,45) },
       { :title => 'Global é do mal e o temido escopo local - Entendendo como funciona e trabalhando para evitar conflitos mantendo a testabilidade', :author => 'Bruno Mentges de Carvalho', :start_at => DateTime.new(2011,05,14,14) },
       { :title => 'ECMAScript na JVM - unindo o poder da plataforma Java com a Flexibilidade do ECMAScript', :author => 'Douglas Campos', :start_at => DateTime.new(2011,05,14,14,45) },
-      { :title => 'Programação Funcional: Novas Fronteiras e Expansã da Mente', :author => 'Andrei Formiga' , :start_at => DateTime.new(2011,05,14,15,30) },
+      { :title => 'Programação Funcional: Novas Fronteiras e Expansão da Mente', :author => 'Andrei Formiga' , :start_at => DateTime.new(2011,05,14,15,30) },
       { :title => 'Capability Based Security: repensando a seguraça com ajuda da linguagem', :author => 'Rafael Ferreira', :start_at => DateTime.new(2011,05,14,16,45) },
       { :title => 'Programando em JS no Android', :author => 'Daniel Passos', :start_at => DateTime.new(2011,05,14,17,30) },
       { :title => 'Keynote Game Development in Javascript', :author => 'Michal Budzynski', :start_at => DateTime.new(2011,05,14,18,15) },
