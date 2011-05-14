@@ -8,6 +8,7 @@
     <section id="checkin-now">
     <figure>
       <img src="img/photos/<%= @keynote.author.parameterize %>.jpg" width="273" height="203" alt="<%= @keynote.author %>">
+			<figcaption><%= @keynote.title %></figcaption>
     </figure>
     <% if Keynote.current.first.id == @keynote.id %>
       <a href="/checkin/<%= @keynote.id %>" class="button">Checkin</a>
