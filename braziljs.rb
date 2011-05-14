@@ -1,11 +1,9 @@
 require 'bundler/setup'
-
-Bundler.setup(:default)
-
-require 'sinatra'
-
+require 'active_record'
 require 'models/keynote'
 require 'models/checkin'
+
+require 'sinatra'
 
 get '/(index)' do
   erb :index
