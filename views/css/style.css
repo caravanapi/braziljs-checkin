@@ -87,20 +87,11 @@ button {  width: auto; overflow: visible; }
  */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media all and (orientation:portrait) { 
-  
+  body {background:#2a2a2a;}
+  header {height:55px; color:#fff; background:url("../images/bgtop.png") repeat-x;}
+  #main {padding:10px 15px;}
+  footer {height:45px; color:#fff; background:#000 url("../images/bgfoot.png") repeat-x;}
 }
 
 @media all and (orientation:landscape) { 
