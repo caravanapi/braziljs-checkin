@@ -9,8 +9,8 @@ configure do
 end
 
 get '/' do
-  @current = Keynote.current
-  Keynote.all.to_json
+  @current = Keynote.current.first
+  @keynotes = Keynote.all
   erb :index
 end
 
