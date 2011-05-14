@@ -31,11 +31,31 @@ post '/keynotes' do
   end
 end
 
-post '/checkin' do
-  @checkin = Checkin.new params[:checkin]
+post '/checkin/:keynote' do
+  @checkin = Checkin.new :keynote_id => params[:keynote]
   if @checkin.save
     @checkin.to_json
   else
     @checkin.errors.to_json
+  end
+end
+
+post '/like/:keynote' do
+  @keynote = Keynote.find(params[:keynote])
+  @keynote.likes += 1
+  if @keynote.save
+    @checkin.to_json
+  else
+    @checkin.errors.to_json
+  end
+end 
+
+post '/unlike/:keynote' do
+  @keynote = Keynote.find(params[:keynote])
+  @keynote.unlike += 1
+  if @keynote.save
+    @keynote.to_json
+  else
+    @keynote.errors.to_json
   end
 end
