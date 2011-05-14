@@ -10,20 +10,13 @@
           <img src="img/1day/gc.jpg" width="86" height="76" alt="Gc">
         </figure>
         <span>Agora!</span>
-        <h2>Guilherme Chapiewski</h2>
+        <h2><%= @current.author %></h2>
       </a>
     </section>
     <ul class="speakers-list">
-      <li><a href="#"><img src="img/photos/david-herman.jpg" width="86" height="76" alt="David Herman"></a></li>
-      <li><a href="#"><img src="img/photos/marcelo-campos.png" width="86" height="76" alt="Marcelo Campos"></a></li>
-      <li><a href="#"><img src="img/photos/izabel.JPG" width="86" height="76" alt="Izabel"></a></li>
-      <li><a href="#"><img src="img/photos/gc.jpg" width="86" height="76" alt="Gc"></a></li>
-      <li><a href="#"><img src="img/photos/loiane.jpg" width="86" height="76" alt="Loiane"></a></li>
-      <li><a href="#"><img src="img/photos/porkaria.png" width="86" height="76" alt="Bruno Porkaria"></li>
-      <li><a href="#"><img src="img/photos/fnando.jpg" width="86" height="76" alt="Fernando"></li>
-      <li><a href="#"><img src="img/photos/davidsonfellipe.jpg" width="86" height="76" alt="Davidson"></li>
-      <li><a href="#"><img src="img/photos/pedro_barcelona.jpg" width="86" height="76" alt="Pedro"></li>
-      <li><a href="#"><img src="img/photos/mikeyyyy.png" width="86" height="76" alt="Mikey"></li>
+      <%= @keynotes.each do |keynote| %>
+        <li><a href="<%= %>"><img src="img/photos/<%= keynote.id %>"> alt="<%= keynote.title %>"></li>
+      <% end %>
     </ul>
   </div>
 

@@ -9,11 +9,9 @@ configure do
 end
 
 get '/' do
-  erb :index
-end
-
-get '/keynotes' do
+  @current = Keynote.current
   Keynote.all.to_json
+  erb :index
 end
 
 post '/keynotes' do
