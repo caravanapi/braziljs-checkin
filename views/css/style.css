@@ -213,10 +213,10 @@ textarea.contenteditable {-webkit-appearance: none;}
    Author:
 */
 
-
-/*
- * Media queries for responsive design https://github.com/shichuan/mobile-html5-boilerplate/wiki/The-Style
- */
+body {background:#2a2a2a; -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
+header {height:55px; color:#fff; background:url("../img/bgtop.png") repeat-x;}
+#main {padding:10px 15px;}
+footer {height:45px; color:#fff; background:#000 url("../img/bgfoot.png") repeat-x;}
 
 
 /* Styles for desktop and large screen ----------- */
