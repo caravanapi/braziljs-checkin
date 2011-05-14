@@ -220,10 +220,10 @@ a {
 ul {
 	list-style: none;
 }
-header {height:52px; color:#fff; background:url("../img/bgtop.png") repeat-x; padding-top:3px;}
+header {height:52px; color:#fff; background:url("/img/bgtop.png") repeat-x; padding-top:3px;}
 #main {padding:10px 15px;}
-footer {height:45px; color:#fff; background:#000 url("../img/bgfoot.png") repeat-x;}
-h1 .logo {background:url("../img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
+footer {height:45px; color:#fff; background:#000 url("/img/bgfoot.png") repeat-x;}
+h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
 
 
 #current-keynote {
