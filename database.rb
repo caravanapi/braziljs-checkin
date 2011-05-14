@@ -2,6 +2,7 @@ config = YAML.load(File.read('config/database.yml'))
 
 ActiveRecord::Base.establish_connection config[ENV['DATABASE_ENV'] || 'development']
 
+ActiveRecord::Base.default_timezone = 'Brasilia'
 ActiveRecord::Migration.class_eval do
   create_table :keynotes do |t|
     t.string :title, :limit => 255, :null => false
