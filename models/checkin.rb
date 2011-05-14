@@ -1,4 +1,4 @@
-class Checkin
+class Checkin < ActiveRecord::Base
   belongs_to :keynote
 
 end
