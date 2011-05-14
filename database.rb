@@ -1,6 +1,6 @@
-config = YAML.load(File.read('database.yml'))
+config = YAML.load(File.read('config/database.yml'))
 
-ActiveRecord::Base.establish_connection config[ENV["RACK_ENV"]||'development']
+ActiveRecord::Base.establish_connection config[ENV['DATABASE_ENV'] || 'development']
 
 ActiveRecord::Migration.class_eval do
   create_table :keynotes do |t|
