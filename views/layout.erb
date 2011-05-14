@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-retina.png">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta http-equiv="cleartype" content="on">
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <script src="js/libs/modernizr-custom.js"></script>
   <script type="text/javascript">
 
@@ -35,23 +35,7 @@
 </head>
 
 <body>
-
-  <div id="container">
-    <header>
-      <h1>BrazilJS Checkin</h1>
-    </header>
-
-    <div id="main">
-      <% yield %>
-    </div>
-
-    <footer>
-      <a class="friday">Sexta</a>
-      <a class="saturday">Sábado</a>
-    </footer>
-  </div> <!-- end of #container -->
-
-
+  <%= yield %>
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
@@ -63,10 +47,22 @@
   <!-- end concatenated and minified scripts-->
   
   <script>
-    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    $(function() {
+      $("a").click(function( event ) {
+        event.preventDefault();
+        console.log('Passei');
+        $.ajax({
+          url: $(this).attr('href'),
+          type: "get",
+          dataType: "html",
+          success: function( data ) {
+            console.log('aqui');
+            $("body").html(data);
+          }
+        });
+      });
+    });
     MBP.scaleFix();
-    
-    // Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill
     yepnope({
       test : Modernizr.mq('(min-width)'),
       nope : ['js/libs/respond.min.js']

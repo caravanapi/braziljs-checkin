@@ -214,10 +214,50 @@ textarea.contenteditable {-webkit-appearance: none;}
 */
 
 body {background:#2a2a2a; -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
 header {height:52px; color:#fff; background:url("../img/bgtop.png") repeat-x; padding-top:3px;}
 #main {padding:10px 15px;}
 footer {height:45px; color:#fff; background:#000 url("../img/bgfoot.png") repeat-x;}
-header h1 {background:url("../img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
+h1 .logo {background:url("../img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
+
+
+#current-keynote {
+	background: #CCC;
+	padding: 5px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+#current-keynote figure {
+	float:left;
+	margin-right: 10px;
+}
+#current-keynote span {
+	color: #CCC;
+}
+#current-keynote h2 {
+	font-size: 16px;
+}
+
+.speakers-list {
+	overflow: hidden;
+	margin:0;
+}
+
+.speakers-list li {
+	float: left;
+	margin:0 10px 10px 0;
+}
+.speakers-list li img {
+	border: 2px solid #CCC;
+}
+
+
+
 
 /* Styles for desktop and large screen ----------- */
 
