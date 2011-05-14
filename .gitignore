@@ -1,3 +1,4 @@
 *.swp
 *.swo
 db/*
+.DS_Store
