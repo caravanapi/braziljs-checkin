@@ -276,6 +276,8 @@ footer nav {
 }
 .speakers-list li img {
 	border: 2px solid #CCC;
+        width: 86px;
+        height: 76px;
 }
 
 /* Footer ----------- */

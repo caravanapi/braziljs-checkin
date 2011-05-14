@@ -7,15 +7,19 @@
     <section id="current-keynote">
       <a href="#">
         <figure>
-          <img src="img/photos/gc.jpg" width="86" height="76" alt="Gc">
+          <img src="img/photos/<%= @current.author.parameterize %>.jpg" alt="<%= @current.title %>">
         </figure>
         <span>Agora!</span>
         <h2><%= @current.author %></h2>
       </a>
     </section>
     <ul class="speakers-list">
-      <%= @keynotes.each do |keynote| %>
-        <li><a href="<%= %>"><img src="img/photos/<%= keynote.id %>"> alt="<%= keynote.title %>"></li>
+      <% @keynotes.each do |keynote| %>
+        <li>
+          <a href="/keynotes/<%= keynote.id %>">
+            <img src="img/photos/<%= keynote.author.parameterize %>.jpg" alt="<%= keynote.title %>">
+          </a>
+        </li>
       <% end %>
     </ul>
   </div>
