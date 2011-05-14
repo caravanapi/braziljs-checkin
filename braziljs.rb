@@ -37,7 +37,7 @@ end
 
 post '/checkin/:keynote' do
   @keynote = Keynote.find params[:keynote]
-  @checkin = Checkin.new :keynote_id => params[:keynote]
+  @checkin = Checkin.new :keynote => @keynote
   if @checkin.save
     erb :keynote 
   else
