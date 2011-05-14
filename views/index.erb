@@ -4,20 +4,22 @@
   </header>
 
   <section id="nav">
-    <nav>
-      <li><a class="friday current">Sexta</a></li>
-      <li><a class="saturday">Sábado</a></li>
-    </nav>
+  <nav>
+  <ul>
+    <li><a href="/?date=2011-05-13" class="friday current">Sexta</a></li>
+    <li><a href="/?date=2011-05-14" class="saturday">Sábado</a></li>
+  </ul>
+  </nav>
   </section>
 
   <div id="main">
     <section id="current-keynote">
-      <a href="/<%= @current.try(:id) %>">
+      <a href="/keynote/<%= @current.id %>">
         <figure>
-          <img src="img/photos/<%= @current.try(:author).try(:parameterize) %>.jpg" alt="<%= @current.try(:title) %>">
+          <img src="img/photos/<%= @current.author.parameterize %>.jpg" alt="<%= @current.title %>">
         </figure>
         <span>Agora!</span>
-        <h2><%= @current.try(:author) %></h2>
+        <h2><%= @current.author %></h2>
 				<span class="arrow">Ver</span>
       </a>
     </section>
@@ -25,8 +27,8 @@
     <ul class="speakers-list">
       <% @keynotes.each do |keynote| %>
         <li>
-          <a href="/keynote/<%= keynote.try(:id) %>">
-            <img src="img/photos/<%= keynote.try(:author).try(:parameterize) %>.jpg" alt="<%= keynote.try(:title) %>">
+          <a href="/keynote/<%= keynote.id %>">
+            <img src="img/photos/<%= keynote.author.parameterize %>.jpg" alt="<%= keynote.title %>">
           </a>
         </li>
       <% end %>
