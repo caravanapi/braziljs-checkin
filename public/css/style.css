@@ -219,6 +219,7 @@ ul { list-style: none }
 header {height:52px; color:#fff; background:url("/img/bgtop.png") repeat-x; padding-top:3px;}
 #main {padding:10px 5px 10px 15px}
 footer {height:45px; color:#fff; background:#000 url("/img/bgfoot.png") repeat-x;}
+h1 { font-size: 16px; text-align: center;}
 h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
 
 /* CSS Sprite */
@@ -228,7 +229,6 @@ footer nav,
   background-image:url("/img/sprite.png");
   background-repeat: no-repeat;
   display: block;
-  text-indent: -9999em;
 }
 .button {
   display: block;
@@ -286,12 +286,22 @@ footer nav,
 }
 
 /* Keynote's Page ----------- */
-.keynote-page header .button {
-  background-position: 0 -55px;
+.keynote-page header .back {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background-position: 0 -60px;
   width: 50px;
   height: 30px;
   line-height: 30px;
   color: #FFF;
+}
+.keynote-page #main {
+  padding: 10px 20px;
+}
+
+#checkin-now figure img {
+  border: 2px solid #CCC;
 }
 
 /* Footer ----------- */
