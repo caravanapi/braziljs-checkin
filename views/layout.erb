@@ -38,12 +38,25 @@
           success: function( data ) { $("#content").html(data); }
         });
       }
+
+      function post(page) {
+        $.ajax({
+          url: page,
+          type: "post",
+          dataType: "html",
+          success: function( data ) { $("#content").html(data); }
+        });
+      }
+
       $("a").live("click", function(event) {
         var href = $(this).attr("href");
         if (href[0] == "/") {
           event.preventDefault();
-          load(href);
-          // window.location.hash = "#!" + href;
+          if ($(this).attr('class') != 'button') {
+            load(href);
+          } else {
+            post(href);
+          }
         }
       });
     });
