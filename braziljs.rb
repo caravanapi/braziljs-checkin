@@ -10,7 +10,7 @@ end
 
 helpers do
   def avatar(keynote)
-    keynote.author =~ /Lightning/ ? "/img/sem-imagems-thumb.png" : "/img/photos/#{keynote.author.parameterize}.jpg"
+    keynote.title =~ /Lightning/ ? "/img/sem-imagem-thumb.png" : "/img/photos/#{keynote.author.parameterize}.jpg"
   end
 end
 
