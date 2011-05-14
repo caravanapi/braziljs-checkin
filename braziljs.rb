@@ -14,7 +14,8 @@ get '/' do
   erb :index
 end
 
-get '/keynote' do
+get '/keynote/:id' do
+  @keynote = Keynote.find(params[:id])
   erb :keynote
 end
 
