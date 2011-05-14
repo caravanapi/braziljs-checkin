@@ -1,0 +1,30 @@
+<div id="container">
+  <header>
+		<a href="#" class="back">Voltar</a>
+    <h1>Leonardo Balter</h1>
+  </header>
+
+  <div id="main">
+    <section id="current-keynote">
+      <a href="#">
+        <figure>
+          <img src="img/photos/gc.jpg" width="86" height="76" alt="Gc">
+        </figure>
+        <span>Agora!</span>
+        <h2><%= @current.author %></h2>
+      </a>
+    </section>
+    <ul class="speakers-list">
+      <%= @keynotes.each do |keynote| %>
+        <li><a href="<%= %>"><img src="img/photos/<%= keynote.id %>"> alt="<%= keynote.title %>"></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <footer>
+		<nav>
+			<li><a class="friday current">Sexta</a></li>
+			<li><a class="saturday">Sábado</a></li>
+		</nav>
+  </footer>
+</div> <!-- end of #container -->
