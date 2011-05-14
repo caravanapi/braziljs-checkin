@@ -226,16 +226,33 @@ h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; d
 	padding: 5px;
 	margin: 10px 10px 10px 0;
 	overflow: hidden;
+	position: relative;
 }
 #current-keynote a {
 	display: block;
+	height: 80px;
+	padding-right:65px;
+}
+#current-keynote .arrow {
+	display:block;
+	text-indent: -9999em;
+	width: 20px;
+	height: 30px;
+	background:url("/img/sprite.png") no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	right: 10px;
 }
 #current-keynote figure {
 	float:left;
 	margin-right: 10px;
 }
+#current-keynote figure img {
+	border: 2px solid #FFF;
+}
 #current-keynote span {
-	color: #CCC;
+	color: #eee;
 }
 #current-keynote h2 {
 	font-size: 16px;
