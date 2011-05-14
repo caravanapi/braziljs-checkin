@@ -16,7 +16,7 @@
     <ul class="speakers-list">
       <% @keynotes.each do |keynote| %>
         <li>
-          <a href="/keynotes/<%= keynote.id %>">
+          <a href="/keynote/<%= keynote.id %>">
             <img src="img/photos/<%= keynote.author.parameterize %>.jpg" alt="<%= keynote.title %>">
           </a>
         </li>
