@@ -57,9 +57,7 @@
         });
       }
       $("a").live("click", function(event) {
-        console.log($(this).attr("href"));
         var href = $(this).attr("href");
-        console.log(href);
         if (href[0] == "/") {
           event.preventDefault();
           load(href);
