@@ -214,9 +214,9 @@ textarea.contenteditable {-webkit-appearance: none;}
 */
 
 body {background:#2a2a2a; -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
-header {height:55px; color:#fff; background:url("../images/bgtop.png") repeat-x;}
+header {height:55px; color:#fff; background:url("../img/bgtop.png") repeat-x;}
 #main {padding:10px 15px;}
-footer {height:45px; color:#fff; background:#000 url("../images/bgfoot.png") repeat-x;}
+footer {height:45px; color:#fff; background:#000 url("../img/bgfoot.png") repeat-x;}
 
 
 /* Styles for desktop and large screen ----------- */
