@@ -1,16 +1,19 @@
 require 'bundler/setup'
 require 'active_record'
-require 'models/keynote'
-require 'models/checkin'
+require File.expand_path( File.dirname(__FILE__) + '/models/keynote' )
+require File.expand_path( File.dirname(__FILE__) + '/models/checkin' )
 
 require 'sinatra'
 configure do
-  require 'database'
+  require  File.expand_path( File.dirname(__FILE__) + '/database' )
 end
 
 get '/' do
   @current = Keynote.current.first
-  @keynotes = Keynote.all
+  @keynotes = Keynote.where("1=1")
+  if params[:date]
+    @keynotes = @keynotes.by_date(Date.parse(params[:date]))
+  end
   erb :index
 end
 
