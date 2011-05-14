@@ -14,6 +14,10 @@ get '/' do
   erb :index
 end
 
+get '/keynote' do
+  erb :keynote
+end
+
 post '/keynotes' do
   @keynote = Keynote.new params[:keynote]
   if @keynote.save
