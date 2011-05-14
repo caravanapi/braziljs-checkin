@@ -10,7 +10,7 @@ end
 
 get '/' do
   @current = Keynote.current.first
-  @keynotes = Keynote.where("1=1")
+  @keynotes = Keynote.scoped
   if params[:date]
     @keynotes = @keynotes.by_date(Date.parse(params[:date]))
   end
