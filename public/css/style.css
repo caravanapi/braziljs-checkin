@@ -212,19 +212,22 @@ textarea.contenteditable {-webkit-appearance: none;}
 /* Primary Styles for mobile
    Author:
 */
-
-body {background:#2a2a2a; -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
+body {background:#2a2a2a; position:relative;}
 a { text-decoration: none }
 ul { list-style: none }
 header {height:52px; color:#fff; background:url("/img/bgtop.png") repeat-x; padding-top:3px;}
 #main {padding:10px 5px 10px 15px}
-footer {height:45px; color:#fff; background:#000 url("/img/bgfoot.png") repeat-x;}
+#nav {height:45px; color:#fff; background:#000 url("/img/bgfoot.png") repeat-x;}
 h1 { font-size: 16px; text-align: center;}
 h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; display:block; text-indent:-999em; margin:0 auto;}
 
 /* CSS Sprite */
 #current-keynote .arrow,
-footer nav,
+.keynote-page header .back,
+#checkin-now .button,
+#rate-it li span,
+#rate-it li strong,
+#nav nav,
 .keynote-page header .back {
   background-image:url("/img/sprite.png");
   background-repeat: no-repeat;
@@ -291,21 +294,102 @@ footer nav,
   top: 10px;
   left: 15px;
   background-position: 0 -60px;
-  width: 50px;
+  width: 48px;
   height: 30px;
   line-height: 30px;
+  padding:0 0 0 4px;
   color: #FFF;
+  text-align:center;
+}
+.keynote-page header h1 {
+  line-height: 45px;
 }
 .keynote-page #main {
   padding: 10px 20px;
 }
 
+#checkin-now figure {
+  margin-bottom:8px;
+}
 #checkin-now figure img {
   border: 2px solid #CCC;
 }
+#checkin-now .button {
+  background-position:0 -90px;
+  width:280px;
+  height:45px;
+  line-height:45px;
+  text-align:center;
+  color:#FFF;
+  font-size:18px;
+  margin-bottom: 10px;
+}
+#checkin-now .button:hover,
+#checkin-now .button:active {
+  background-position:0 -135px;
+}
+
+#rate-it ul {
+  overflow: hidden;
+  margin:0 5px;
+}
+#rate-it li {
+  float:left;
+  width: 126px;
+  margin-right: 10px;
+}
+#rate-it li a {
+  background: #000;
+  display: block;
+  width:128px;
+  height: 94px;
+  border-radius:4px;
+  padding:10px 1px 1px;
+  border-bottom:1px solid #CCC;
+  text-align:center;
+}
+#rate-it li span {
+  display:inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom:4px;
+}
+#rate-it li .ïcon-up {
+  background-position: 0 -180px;
+}
+#rate-it li .ïcon-down {
+  background-position: -54px -180px;
+}
+#rate-it li+li {
+  margin:0;
+}
+#rate-it li strong {
+  background-position:0 -230px;
+  width:130px;
+  height:38px;
+  line-height:40px;
+  color:#5A5A5A;
+  font-size:16px;
+  text-align: center;
+  font-weight:normal;
+}
+#rate-it li+li strong {
+  background-position:0 -269px;
+  color:#FFF;
+}
+#rate-it li a:hover strong,
+#rate-it li a:active strong {
+  background-position:0 -309px;
+}
+
+
 
 /* Footer ----------- */
-footer nav { 
+/*html, body {height:100%;}
+#page {height:auto !important; margin:0 auto -45px; min-height:100%;}
+#stick {height:45px; padding-bottom:0.5em;}
+footer {height:45px;}*/
+#nav nav { 
   margin:0 auto;
   background-position: 0 -30px;
   width:162px;
@@ -313,16 +397,16 @@ footer nav {
   position:relative;
   top:8px;
 }
-footer nav li {
+#nav nav li {
   float:left;
   width: 50%;
 }
-footer nav li a {
+#nav nav li a {
   display: block;
   text-align: center;
   line-height: 30px;
 }
-footer nav li .current {
+#nav nav li .current {
   color:#FFF;
 }
 /* Styles for desktop and large screen ----------- */

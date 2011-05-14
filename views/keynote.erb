@@ -5,15 +5,20 @@
   </header>
 
   <div id="main">
+    <section id="checkin-now">
+    <figure>
+      <img src="img/photos/<%= @keynote.author.parameterize %>.jpg" width="273" height="203" alt="<%= @keynote.author %>">
+    </figure>
+    <% if Keynote.current.first.id == @keynote.id %>
+      <a href="/checkin/<%= @keynote.id %>" class="button">Checkin</a>
+    <%end%>
+    </section>
+
     <section id="rate-it">
-      <ul>
-        <li><a href="<%= %>"><span>curti, macho</span></a></li>
-        <li><a href="<%= %>"><span>arre égua</span></a></li>
-      </ul>
-      <figure>
-        <img src="img/photos/<%= @keynote.author.parameterize %>.jpg" width="273" height="203" alt="<%= @keynote.author %>">
-      </figure>
-      <a href="#" class="button">Checkin</a>
+    <ul>
+      <li><a href="/like/<%= @keynote.id %>"><span class="icon-up"></span><strong>curti, macho</strong></a></li>
+      <li><a href="/unlike/<%= @keynote.id %>"><span class="icon-down"></span><strong>arre égua</strong></a></li>
+    </ul>
     </section>
   </div>
 </div> <!-- end of #container -->
