@@ -16,7 +16,7 @@
     <section id="current-keynote">
       <a href="/keynote/<%= @current.id %>">
         <figure>
-          <img src="img/photos/<%= @current.author.parameterize %>.jpg" alt="<%= @current.title %>">
+          <img src="<%= avatar @current %>" alt="<%= @current.title %>">
         </figure>
         <span>Agora!</span>
         <h2><%= @current.author %></h2>
@@ -28,7 +28,7 @@
       <% @keynotes.each do |keynote| %>
         <li>
           <a href="/keynote/<%= keynote.id %>">
-            <img src="img/photos/<%= keynote.author.parameterize %>.jpg" alt="<%= keynote.title %>">
+            <img src="<%= avatar keynote %>" alt="<%= keynote.title %>">
           </a>
         </li>
       <% end %>

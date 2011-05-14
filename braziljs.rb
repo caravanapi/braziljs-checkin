@@ -8,6 +8,12 @@ configure do
   require  File.expand_path( File.dirname(__FILE__) + '/database' )
 end
 
+helpers do
+  def avatar(keynote)
+    keynote.author =~ /Lightning/ ? "/img/sem-imagems-thumb.png" : "/img/photos/#{keynote.author.parameterize}.jpg"
+  end
+end
+
 get '/' do
   @current = Keynote.current.first
   @keynotes = Keynote.scoped
@@ -32,9 +38,10 @@ post '/keynotes' do
 end
 
 post '/checkin/:keynote' do
+  @keynote = Keynote.find params[:keynote]
   @checkin = Checkin.new :keynote_id => params[:keynote]
   if @checkin.save
-    @checkin.to_json
+    erb :keynote 
   else
     @checkin.errors.to_json
   end
@@ -44,7 +51,7 @@ post '/like/:keynote' do
   @keynote = Keynote.find(params[:keynote])
   @keynote.likes += 1
   if @keynote.save
-    @checkin.to_json
+    erb :keynote
   else
     @checkin.errors.to_json
   end
@@ -54,7 +61,7 @@ post '/unlike/:keynote' do
   @keynote = Keynote.find(params[:keynote])
   @keynote.unlike += 1
   if @keynote.save
-    @keynote.to_json
+    erb :keynote
   else
     @keynote.errors.to_json
   end
