@@ -1,0 +1,15 @@
+<div id="container" class="keynote-page">
+  <header>
+  <a href="/" class="button back">Voltar</a>
+  <h1><%= @keynote.author %></h1>
+  </header>
+
+  <div id="main">
+    <section id="rate-it">
+    <ul>
+      <li><a class="button" href="/like/<%= @keynote.id %>"><span class="icon-up"></span><strong>curti, macho</strong></a></li>
+      <li><a class="button" href="/unlike/<%= @keynote.id %>"><span class="icon-down"></span><strong>arre égua</strong></a></li>
+    </ul>
+    </section>
+  </div>
+</div> <!-- end of #container -->

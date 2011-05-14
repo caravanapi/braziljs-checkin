@@ -49,7 +49,7 @@ post '/like/:keynote' do
   @keynote = Keynote.find(params[:keynote])
   @keynote.likes += 1
   if @keynote.save
-    erb :keynote
+    erb :results
   else
     @checkin.errors.to_json
   end
@@ -59,7 +59,7 @@ post '/unlike/:keynote' do
   @keynote = Keynote.find(params[:keynote])
   @keynote.unlike += 1
   if @keynote.save
-    erb :keynote
+    erb :results
   else
     @keynote.errors.to_json
   end

@@ -16,8 +16,8 @@
 
     <section id="rate-it">
     <ul>
-      <li><a class="button" href="/like/<%= @keynote.id %>"><span class="icon-up"></span><strong>curti, macho</strong></a></li>
-      <li><a class="button" href="/unlike/<%= @keynote.id %>"><span class="icon-down"></span><strong>arre égua</strong></a></li>
+      <li><a class="button" href="/like/<%= @keynote.id %>"><span class="icon-up"><%= @keynote.likes %> </span><strong>curti, macho</strong></a></li>
+      <li><a class="button" href="/unlike/<%= @keynote.id %>"><span class="icon-down"><%= @keynote.unlikes %></span><strong>arre égua</strong></a></li>
     </ul>
     </section>
   </div>
