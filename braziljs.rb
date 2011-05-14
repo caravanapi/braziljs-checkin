@@ -17,9 +17,7 @@ end
 get '/' do
   @current = Keynote.current.first
   @keynotes = Keynote.scoped
-  if params[:date]
-    @keynotes = @keynotes.by_date(Date.parse(params[:date]))
-  end
+  @keynotes = @keynotes.by_date(params[:date] ? Date.parse(params[:date]) : Date.today)
   erb :index
 end
 
