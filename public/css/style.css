@@ -355,13 +355,12 @@ h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; d
   border-radius:4px;
   padding:10px 1px 1px;
   border-bottom:1px solid #CCC;
-  text-align:center;
 }
 #rate-it li span {
   display:inline-block;
   width: 48px;
   height: 48px;
-  margin-bottom:4px;
+  margin:0 0 4px 10px;
 }
 #rate-it li .icon-up {
   background-position: 0 -180px;
@@ -391,7 +390,17 @@ h1 .logo {background:url("/img/logo.png") no-repeat; width:224px; height:43px; d
   background-position:0 -309px;
 }
 
-
+#rate-it li big {
+  font-size: 24px;
+  color: #FFF;
+  position: relative;
+  left: 52px;
+   top: 5px;
+  padding: 2px;
+  display: block;
+  width: 50px;
+  text-align: center;
+}
 
 /* Footer ----------- */
 /*html, body {height:100%;}
