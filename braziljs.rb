@@ -17,7 +17,7 @@ end
 get '/' do
   @current = Keynote.current.first
   @keynotes = Keynote.scoped
-  @keynotes = @keynotes.by_date(params[:date] ? Date.parse(params[:date]) : Date.today)
+  @keynotes = @keynotes.by_date(params[:date] ? Date.parse(params[:date]) : DateTime.now - 3.hours)
   erb :index, :layout => !request.xhr?
 end
 
