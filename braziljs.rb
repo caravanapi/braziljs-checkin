@@ -57,7 +57,7 @@ end
 
 post '/unlike/:keynote' do
   @keynote = Keynote.find(params[:keynote])
-  @keynote.unlike += 1
+  @keynote.unlikes += 1
   if @keynote.save
     erb :keynote, :layout => !request.xhr?
   else
