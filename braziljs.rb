@@ -17,7 +17,7 @@ end
 get '/' do
   @current = Keynote.current.first
   @keynotes = Keynote.scoped.order('start_at asc')
-  @keynotes = @keynotes.by_date(params[:date] ? Date.parse(params[:date]) : DateTime.now - 3.hours)
+  @keynotes = @keynotes.by_date(params[:date] ? Date.parse(params[:date]) : DateTime.now.in_time_zone(ActiveRecord::Base.default_timezone)))
   erb :index, :layout => !request.xhr?
 end
 
