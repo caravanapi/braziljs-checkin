@@ -1,20 +1,20 @@
-<div id="container">
+<div class="content">
   <header>
-    <h1><a href="/" class="logo">BrazilJS Checkin</a></h1>
+    <h1><a href="/" class="logo ajax">BrazilJS Checkin</a></h1>
   </header>
 
   <section id="nav">
   <nav>
   <ul>
-    <li><a href="/?date=2011-05-13" class="friday current">Sexta</a></li>
-    <li><a href="/?date=2011-05-14" class="saturday">Sábado</a></li>
+    <li><a href="/?date=2011-05-13" class="friday ajax">Sexta</a></li>
+    <li><a href="/?date=2011-05-14" class="saturday ajax">Sábado</a></li>
   </ul>
   </nav>
   </section>
 
   <div id="main">
     <section id="current-keynote">
-      <a href="/keynote/<%= @current.id %>">
+      <a href="/keynote/<%= @current.id %>" class="keynote">
         <figure>
           <img src="<%= avatar @current %>" alt="<%= @current.title %>">
         </figure>
@@ -27,7 +27,7 @@
     <ul class="speakers-list">
       <% @keynotes.each do |keynote| %>
         <li>
-          <a href="/keynote/<%= keynote.id %>">
+          <a href="/keynote/<%= keynote.id %>" class="keynote">
             <img src="<%= avatar keynote %>" alt="<%= keynote.title %>">
           </a>
         </li>

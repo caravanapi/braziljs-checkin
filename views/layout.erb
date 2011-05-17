@@ -22,13 +22,13 @@
 </head>
 
 <body>
-  <div id="content"><%= yield %></div>
+  <div id="container"><div class="content"><%= yield %></div></div>
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script src="/js/libs/jquery-1.5.1.js"></script>
   <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
-  <script src="js/mylibs/helper.js"></script>
+  <script src="/js/mylibs/helper.js"></script>
   <script>
     jQuery(document).ready(function($) {
       function load(page) {
@@ -36,7 +36,7 @@
           url: page,
           type: "get",
           dataType: "html",
-          success: function( data ) { $("#content").html(data); }
+          success: function( data ) { $("#container").html(data); }
         });
       }
 
@@ -45,20 +45,35 @@
           url: page,
           type: "post",
           dataType: "html",
-          success: function( data ) { $("#content").html(data); }
+          success: function( data ) { $("#container").html(data); }
         });
       }
 
-      $("a").live("click", function(event) {
+      $("a.ajax").live("click", function(event) {
         var href = $(this).attr("href");
         if (href[0] == "/") {
           event.preventDefault();
-          if ($(this).attr('class') != 'button') {
-            load(href);
-          } else {
+          if ($(this).hasClass('button')) {
             post(href);
+          } else {
+            load(href);
           }
         }
+      });
+      $('a.keynote').live("click", function(event){
+        event.preventDefault();
+        $.ajax({
+          url: $(this).attr('href'),
+          type: "get",
+          dataType: "html",
+          success: function(data) { $("#container").append(data); }
+        });
+        $('.content').hide();
+      });
+      $('a.back').live("click", function(event){
+        $('.content:visible').remove();
+        $('.content').show();
+        event.preventDefault();
       });
     });
 
@@ -67,19 +82,6 @@
       test : Modernizr.mq('(min-width)'),
       nope : ['js/libs/respond.min.js']
     });
-  </script>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-23346930-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
   </script>
 </body>
 </html>
